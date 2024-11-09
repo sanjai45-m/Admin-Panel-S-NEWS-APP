@@ -1,0 +1,130 @@
+/* Default Sidebar Styles */
+.sidebar {
+  width: 200px;
+  background-color: #0b333f;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar ul li:hover {
+  background-color: #1a4d63;
+  transform: scale(1.02);
+}
+
+.sidebar ul li.active {
+  background-color: #1a4d63;
+  font-weight: bold;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  margin-top: auto;
+}
+
+.logout-button:hover {
+  background-color: red;
+}
+
+.logout-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Navbar Styles for Mobile View */
+.navbar {
+  display: none; /* Hide navbar by default */
+}
+
+@media screen and (max-width: 768px) {
+  /* Hide the sidebar in mobile view */
+  .sidebar {
+    display: none;
+  }
+
+  /* Display the navbar in mobile view */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b333f;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar h2 {
+    color: #ffffff;
+    font-size: 18px;
+  }
+
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar ul li {
+    margin-left: 15px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .navbar ul li:hover {
+    color: #e1f5fe; /* Lighter color on hover */
+  }
+
+  /* Smaller logout button in the bottom-right corner */
+  .logout-button {
+    padding: 6px 12px; /* Smaller padding for mobile view */
+    font-size: 14px;
+    background-color: #f44336;
+    border-radius: 5px;
+    position: fixed; /* Fixed position to avoid overlapping */
+    right: 10px;
+    bottom: 10px;
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+
+  .logout-button:hover {
+    background-color: #e53935;
+  }
+
+  .logout-button:active {
+    transform: scale(0.98);
+  }
+  
+}

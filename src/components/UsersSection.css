@@ -1,0 +1,198 @@
+/* Ensure that the page takes up the full height of the viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Full stretch container for the entire admin panel */
+.admin-panel {
+  display: flex;
+  height: 100%;
+  background-color: #f4f4f4;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Main content area should take the remaining space */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+/* Full stretch form styling */
+.add-user-form {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: fadeInScale 0.5s forwards;
+  max-width: 600px; /* Limit the form's width */
+  width: 100%;
+}
+
+/* Animating form appearance */
+@keyframes fadeInScale {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Label and input styling */
+.add-user-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.add-user-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Buttons in a row */
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Space between buttons */
+}
+
+.buttons button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+  background-color: #45a049;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  /* Stack sidebar and main content on top of each other */
+  .admin-panel {
+    flex-direction: column;
+  }
+
+  /* Sidebar takes full width on mobile */
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Main content also takes full width */
+  .main-content {
+    padding: 10px;
+  }
+
+  /* Form should also have a smaller max-width on mobile */
+  .add-user-form {
+    max-width: 100%;
+  }
+
+  /* Buttons stack on top of each other on mobile */
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Table headers and cells wrap text on small screens */
+  th, td {
+    white-space: normal;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Reduce padding for smaller screens */
+  .sidebar {
+    padding: 5px;
+  }
+
+  .main-content {
+    padding: 5px;
+  }
+
+  .add-user-form {
+    padding: 15px;
+  }
+
+  .buttons button {
+    padding: 8px 16px;
+  }
+}
+/* UsersSection.css */
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background-color: #d9534f; /* Red color for confirmation */
+  color: white;
+}
+
+.modal-buttons button:last-child {
+  background-color: #5bc0de; /* Blue color for cancel */
+  color: white;
+}
